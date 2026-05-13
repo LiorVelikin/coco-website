@@ -7,13 +7,13 @@ import BlurText from './BlurText';
 const EASE = [0.16, 1, 0.3, 1];
 
 const LEFT_CHIPS  = [
-  { label: 'No Added Sugar',       sub: 'Zero sweeteners',       delay: 0.0 },
-  { label: 'Natural Electrolytes', sub: 'Potassium & magnesium', delay: 0.15 },
-  { label: 'Serve Ice Cold',       sub: 'Best at 4°C',           delay: 0.30 },
+  { label: 'ללא סוכר מוסף',       sub: 'ללא ממתיקים',        delay: 0.0 },
+  { label: 'אלקטרוליטים טבעיים',  sub: 'אשלגן ומגנזיום',     delay: 0.15 },
+  { label: 'הגישו קפוא',          sub: 'מיטבי ב-4°C',        delay: 0.30 },
 ];
 const RIGHT_CHIPS = [
-  { label: '355ml',          sub: 'Slim premium can',  delay: 0.08 },
-  { label: '100% Coconut',   sub: 'Real & unfiltered', delay: 0.22 },
+  { label: '355 מ״ל',        sub: 'פחית פרמיום',      delay: 0.08 },
+  { label: '100% קוקוס',    sub: 'טבעי ולא מסונן',   delay: 0.22 },
 ];
 
 export default function HeroSection() {
@@ -77,9 +77,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.12 }}
         >
-          <span className="inline-flex items-center gap-2.5 px-5 py-1.5 rounded-full border border-sage/22 text-sage-dark text-[11px] font-sans font-medium tracking-[0.16em] uppercase">
+          <span className="inline-flex items-center gap-2.5 px-5 py-1.5 rounded-full border border-sage/22 text-sage-dark text-[11px] font-sans font-medium tracking-[0.1em]">
             <span className="w-1 h-1 rounded-full bg-sage inline-block" />
-            100% coconut water · no added sugar
+            100% מי קוקוס · ללא סוכר מוסף
           </span>
         </motion.div>
 
@@ -87,7 +87,7 @@ export default function HeroSection() {
         <div className="text-center mb-5 md:mb-7">
           <BlurText
             as="h1"
-            text="Pure Coconut Water."
+            text="מי קוקוס טבעיים."
             className="font-serif font-light text-olive block"
             style={{ fontSize: 'clamp(2.8rem, 7vw, 8rem)', lineHeight: 0.92, letterSpacing: '-0.01em' }}
             delay={0.18}
@@ -95,7 +95,7 @@ export default function HeroSection() {
           />
           <BlurText
             as="h1"
-            text="Built for Summer."
+            text="נולדו לקיץ."
             className="font-serif italic font-light block"
             style={{ fontSize: 'clamp(2.8rem, 7vw, 8rem)', lineHeight: 0.92, letterSpacing: '-0.01em', color: 'rgba(61,74,53,0.52)' }}
             delay={0.40}
@@ -104,9 +104,10 @@ export default function HeroSection() {
         </div>
 
         {/* ── 3-column infographic layout: chips | can | chips ── */}
-        {/* Desktop: 3-col grid so chips are always flush against the can */}
+        {/* dir="ltr" keeps column order the same regardless of HTML dir */}
         <div
           className="w-full hidden md:grid"
+          dir="ltr"
           style={{ gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', minHeight: '420px', gap: '0' }}
         >
           {/* Left chips — right-aligned, line points toward can */}
@@ -147,8 +148,7 @@ export default function HeroSection() {
         >
           <p className="font-sans text-olive/52 leading-[1.8] font-light mb-8"
             style={{ fontSize: 'clamp(0.92rem, 1.2vw, 1.05rem)' }}>
-            Cold, clean, naturally hydrating coconut water made for beach days,
-            workouts, poolside resets, and everyday energy.
+            מי קוקוס קרים, נקיים ומרעננים — לימי חוף, אימונים, בריכה ואנרגיה יומיומית.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.a
@@ -158,7 +158,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 280, damping: 20 }}
             >
-              Shop COCO
+              הזמינו COCO
             </motion.a>
             <motion.a
               href="#lifestyle"
@@ -167,20 +167,20 @@ export default function HeroSection() {
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 280, damping: 20 }}
             >
-              See the vibe
+              לאווירה
             </motion.a>
           </div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator — pinned to bottom of section */}
+      {/* Scroll indicator */}
       <motion.div
         className="flex flex-col items-center gap-2.5 pb-2"
         initial={{ opacity: 0 }}
         animate={ctaVisible ? { opacity: 0.32 } : { opacity: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
-        <span className="font-sans text-[9px] tracking-[0.22em] text-olive uppercase">Scroll</span>
+        <span className="font-sans text-[9px] tracking-[0.22em] text-olive uppercase">גלול</span>
         <motion.div
           className="w-px h-8 bg-olive/40 origin-top"
           animate={{ scaleY: [0.2, 1, 0.2] }}

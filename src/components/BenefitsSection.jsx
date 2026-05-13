@@ -10,26 +10,26 @@ const BENEFITS = [
   {
     number: 1,
     icon: 'leaf',
-    title: '100% coconut water',
-    body: 'Naturally refreshing, light, and smooth — without unnecessary extras.',
+    title: '100% מי קוקוס',
+    body: 'מרענן, קל וחלק — ללא תוספות מיותרות.',
   },
   {
     number: 2,
     icon: 'drop',
-    title: 'No added sugar',
-    body: 'Just the clean tropical taste of coconut water, made for daily drinking.',
+    title: 'ללא סוכר מוסף',
+    body: 'רק הטעם הטרופי הנקי של מי קוקוס, מיועד לשתייה יומיומית.',
   },
   {
     number: 3,
     icon: 'bolt',
-    title: 'Natural electrolytes',
-    body: 'A smarter choice after training, tennis, beach days, and long summer afternoons.',
+    title: 'אלקטרוליטים טבעיים',
+    body: 'בחירה חכמה יותר אחרי אימון, טניס, ימי חוף ואחרי צהריים ארוכים.',
   },
   {
     number: 4,
     icon: 'can',
-    title: 'Premium 355ml can',
-    body: 'Slim, cold, easy to carry, and designed to look good anywhere.',
+    title: 'פחית פרמיום 355 מ״ל',
+    body: 'דקה, קרה, קלה לנשיאה ומעוצבת להיראות טוב בכל מקום.',
   },
 ];
 
@@ -38,8 +38,6 @@ export default function BenefitsSection() {
   const stickyRef = useRef(null);
   const [activeCard, setActiveCard] = useState(0);
 
-  // Scroll progress for can rotation hint
-  // Future scroll progress can map to Three.js can rotation here.
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
@@ -60,16 +58,16 @@ export default function BenefitsSection() {
         <div className="pt-16 md:pt-32 pb-12 md:pb-20">
           <motion.p
             className="font-sans text-xs tracking-[0.2em] text-sage uppercase mb-5"
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            Why COCO
+            למה COCO
           </motion.p>
           <BlurText
             as="h2"
-            text="Hydration that actually feels clean."
+            text="הידרציה שבאמת מרגישה נקייה."
             className="font-serif font-light text-olive leading-[1.05] max-w-2xl"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
             delay={0.1}
@@ -87,7 +85,6 @@ export default function BenefitsSection() {
               className="sticky top-24 flex flex-col items-center justify-center"
               style={{ height: 'calc(100vh - 12rem)' }}
             >
-              {/* Ambient ring */}
               <div
                 className="absolute rounded-full blur-3xl opacity-20 pointer-events-none"
                 style={{
@@ -97,10 +94,9 @@ export default function BenefitsSection() {
                 }}
               />
 
-              {/* Future scroll progress can map to Three.js can rotation here. */}
               <motion.img
                 src={ASSETS.canElements}
-                alt="COCO can with natural elements"
+                alt="פחית COCO עם אלמנטים טבעיים"
                 className="relative z-10"
                 style={{
                   maxHeight: '70vh',
@@ -113,7 +109,6 @@ export default function BenefitsSection() {
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
               />
 
-              {/* Small label below can */}
               <motion.p
                 className="mt-6 font-sans text-xs tracking-[0.16em] text-sage uppercase opacity-60"
                 initial={{ opacity: 0 }}
@@ -121,7 +116,7 @@ export default function BenefitsSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6 }}
               >
-                COCO · 355ml · Premium
+                COCO · 355 מ״ל · פרמיום
               </motion.p>
             </div>
           </div>
@@ -132,7 +127,7 @@ export default function BenefitsSection() {
             <div className="md:hidden flex justify-center mb-8">
               <img
                 src={ASSETS.canElements}
-                alt="COCO can with natural elements"
+                alt="פחית COCO עם אלמנטים טבעיים"
                 style={{ maxHeight: '280px', filter: 'drop-shadow(0 20px 40px rgba(61,74,53,0.14))' }}
               />
             </div>

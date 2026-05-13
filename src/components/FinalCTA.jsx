@@ -40,14 +40,14 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: EASE }}
         >
-          The clean daily coconut water
+          מי קוקוס יומיומיים ונקיים
         </motion.p>
 
         {/* Giant headline */}
         <div className="text-center mb-6">
           <BlurText
             as="h2"
-            text="Open."
+            text="פתחו."
             className="font-serif font-light text-cream leading-[0.88] block"
             style={{ fontSize: 'clamp(3.5rem, 15vw, 14rem)' }}
             delay={0.05}
@@ -55,7 +55,7 @@ export default function FinalCTA() {
           />
           <BlurText
             as="h2"
-            text="Sip."
+            text="לגמו."
             className="font-serif italic font-light leading-[0.88] block"
             style={{ fontSize: 'clamp(3.5rem, 15vw, 14rem)', color: 'rgba(201,185,154,0.6)' }}
             delay={0.2}
@@ -63,7 +63,7 @@ export default function FinalCTA() {
           />
           <BlurText
             as="h2"
-            text="Reset."
+            text="התחדשו."
             className="font-serif font-light text-cream leading-[0.88] block"
             style={{ fontSize: 'clamp(3.5rem, 15vw, 14rem)' }}
             delay={0.35}
@@ -98,8 +98,8 @@ export default function FinalCTA() {
             className="font-sans text-cream/50 font-light leading-relaxed mb-10 mx-auto"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)', maxWidth: '520px' }}
           >
-            COCO is your clean daily coconut water — from the beach to the court
-            to wherever summer takes you.
+            COCO הם מי הקוקוס היומיומיים הנקיים שלכם — מהחוף למגרש
+            ולכל מקום שהקיץ לוקח אתכם.
           </p>
 
           <motion.a
@@ -109,9 +109,9 @@ export default function FinalCTA() {
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.2 }}
           >
-            Get COCO Today
+            הזמינו COCO היום
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7" />
+              <path d="M19 12H5M12 5l-7 7 7 7" />
             </svg>
           </motion.a>
 
@@ -122,7 +122,7 @@ export default function FinalCTA() {
             viewport={{ once: true }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            Best served cold.
+            מומלץ להגיש קר.
           </motion.p>
         </motion.div>
       </div>
@@ -136,12 +136,12 @@ export default function FinalCTA() {
       <div className="px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-cream/10">
         <p className="font-serif text-xl tracking-[0.14em] text-cream/30 uppercase">COCO</p>
         <p className="font-sans text-xs text-cream/25 tracking-wide">
-          © 2025 COCO Premium Coconut Water. All rights reserved.
+          © 2025 COCO מי קוקוס פרמיום. כל הזכויות שמורות.
         </p>
         <div className="flex gap-6">
-          {['Instagram', 'TikTok', 'Contact'].map((l) => (
-            <a key={l} href="#" className="font-sans text-xs text-cream/30 hover:text-cream/60 transition-colors duration-300 tracking-wide">
-              {l}
+          {[{ label: 'אינסטגרם', href: '#' }, { label: 'טיקטוק', href: '#' }, { label: 'צרו קשר', href: '#' }].map((l) => (
+            <a key={l.label} href={l.href} className="font-sans text-xs text-cream/30 hover:text-cream/60 transition-colors duration-300 tracking-wide">
+              {l.label}
             </a>
           ))}
         </div>

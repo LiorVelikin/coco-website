@@ -6,9 +6,9 @@ import { ASSETS } from '../assets';
 const EASE = [0.16, 1, 0.3, 1];
 
 const STORY_STATS = [
-  { val: '48h',           label: 'Tree to can',        sub: 'Maximum freshness window' },
-  { val: 'Thailand',      label: 'Source of origin',    sub: 'Koh Samui groves' },
-  { val: '2021',          label: 'Founded',             sub: 'Born on the coast' },
+  { val: '48h',       label: 'עץ לפחית',       sub: 'חלון הרעננות המקסימלי' },
+  { val: 'Thailand',  label: 'מקור המוצר',      sub: 'חורשות קוה סמוי' },
+  { val: '2021',      label: 'נוסדה',           sub: 'נולדה על החוף' },
 ];
 
 export default function StorySection() {
@@ -24,52 +24,49 @@ export default function StorySection() {
       ref={ref}
       className="relative overflow-hidden bg-cream-50 py-16 md:py-44"
     >
-      {/* Subtle top rule */}
       <div className="absolute top-0 left-0 right-0 h-px bg-sage/15" />
 
       <div className="max-w-[1440px] mx-auto px-6 md:px-14">
 
-        {/* Section label */}
         <motion.p
           className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-10 md:mb-20"
-          initial={{ opacity: 0, x: -16 }}
+          initial={{ opacity: 0, x: 16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          Our Story
+          הסיפור שלנו
         </motion.p>
 
         {/* Main grid: image left, text right */}
         <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-start">
 
-          {/* Left: large editorial image with subtle parallax */}
+          {/* Left: large editorial image */}
           <div className="md:col-span-5 relative">
             <motion.div
               className="relative overflow-hidden rounded-2xl md:rounded-3xl"
               style={{ aspectRatio: '3/4' }}
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 1.2, ease: EASE }}
             >
               <motion.img
                 src={ASSETS.beachChair}
-                alt="Woman at golden hour beach club drinking COCO"
+                alt="אישה בחוף בשעת הזהב שותה COCO"
                 className="w-full h-full object-cover"
                 style={{ scale: imgScale, y: imgY }}
                 loading="lazy"
               />
-              {/* Warm golden overlay — ties the image to the brand palette */}
               <div
                 className="absolute inset-0 mix-blend-multiply opacity-10 pointer-events-none"
                 style={{ background: 'linear-gradient(180deg, transparent 40%, #C9B99A 100%)' }}
               />
             </motion.div>
 
-            {/* Floating pull-quote over image */}
+            {/* Floating pull-quote */}
             <motion.div
-              className="absolute bottom-6 left-4 right-4 md:left-auto md:-right-8 md:bottom-10 md:max-w-[260px]"
+              className="absolute bottom-6 right-4 left-4 md:right-auto md:-left-8 md:bottom-10 md:max-w-[260px]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -77,10 +74,10 @@ export default function StorySection() {
             >
               <div className="bg-cream-50/90 backdrop-blur-md rounded-2xl p-5 border border-sage/15 shadow-lg shadow-olive/8">
                 <p className="font-serif italic text-olive text-sm leading-relaxed">
-                  "We stopped looking for the right coconut water and decided to make it ourselves."
+                  ״הפסקנו לחפש את מי הקוקוס הנכונים והחלטנו להכין אותם בעצמנו.״
                 </p>
                 <p className="font-sans text-[10px] tracking-[0.14em] uppercase text-sage mt-3">
-                  — The Founders, 2021
+                  — המייסדים, 2021
                 </p>
               </div>
             </motion.div>
@@ -94,7 +91,7 @@ export default function StorySection() {
             <div className="max-w-xl">
               <BlurText
                 as="h2"
-                text="Born where the palm meets the coast."
+                text="נולד בין הדקל לחוף."
                 className="font-serif font-light text-olive leading-[1.05] mb-10 md:mb-12"
                 style={{ fontSize: 'clamp(2rem, 4vw, 4.2rem)' }}
                 delay={0.1}
@@ -110,10 +107,10 @@ export default function StorySection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, duration: 0.9, ease: EASE }}
                 >
-                  It started with one question: why does coconut water always taste like compromise?
-                  Every brand we tried was over-processed, over-sweetened, or just wrong.
-                  So we went to the source — to the young coconut groves of Koh Samui, Thailand,
-                  where the air smells like salt and everything slows down.
+                  זה התחיל בשאלה אחת: למה מי קוקוס תמיד טועמים כמו פשרה?
+                  כל מותג שניסינו היה מעובד מדי, ממותק מדי, או פשוט לא נכון.
+                  אז הלכנו למקור — לחורשות הקוקוס הצעירות של קוה סמוי, תאילנד,
+                  שם האוויר מריח כמו מלח והכל מאט.
                 </motion.p>
 
                 <motion.p
@@ -124,9 +121,9 @@ export default function StorySection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.32, duration: 0.9, ease: EASE }}
                 >
-                  We found farmers who harvest young coconuts within 48 hours of picking.
-                  No heat treatment. No added sugar. No concentrates. Just the real thing,
-                  sealed cold at peak freshness and shipped straight to you.
+                  מצאנו חקלאים שקוצרים קוקוסים צעירים תוך 48 שעות מהקטיף.
+                  ללא טיפול בחום. ללא סוכר מוסף. ללא ריכוזים.
+                  רק הדבר האמיתי, אטום בקור בשיא הרעננות ונשלח ישירות אליכם.
                 </motion.p>
 
                 <motion.p
@@ -137,19 +134,18 @@ export default function StorySection() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.44, duration: 0.9, ease: EASE }}
                 >
-                  We brought it home to the Mediterranean — to the courts, the clubs,
-                  the pools, and the people who know what clean actually tastes like.
-                  COCO is what happens when you stop compromising.
+                  הבאנו אותו הביתה לים התיכון — למגרשים, לקלאבים,
+                  לבריכות ולאנשים שיודעים מה נקי באמת טועם.
+                  COCO הוא מה שקורה כשמפסיקים להתפשר.
                 </motion.p>
               </div>
 
-              {/* Divider */}
               <motion.div
                 className="w-12 h-px bg-sage/40 my-10 md:my-12"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                style={{ originX: 0 }}
+                style={{ originX: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: EASE }}
               />
 

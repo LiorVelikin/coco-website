@@ -1,17 +1,16 @@
 import { motion } from 'framer-motion';
 
 const ITEMS = [
-  '100% coconut water',
-  'No added sugar',
-  'Natural electrolytes',
-  'Serve ice cold',
-  'Premium 355ml can',
-  'Beach club approved',
-  'Post-match hydration',
-  'Clean daily drink',
+  '100% מי קוקוס',
+  'ללא סוכר מוסף',
+  'אלקטרוליטים טבעיים',
+  'הגישו קפוא',
+  'פחית פרמיום 355 מ״ל',
+  'מאושר לביץ׳ קלאב',
+  'הידרציה לאחר משחק',
+  'שתייה יומיומית נקייה',
 ];
 
-// Duplicate so the seamless loop works at half-way
 const DOUBLED = [...ITEMS, ...ITEMS];
 
 export default function MarqueeStrip({ inverted = false }) {
@@ -22,6 +21,7 @@ export default function MarqueeStrip({ inverted = false }) {
           ? 'border-cream/20 bg-olive'
           : 'border-sage/20 bg-cream-50'
       }`}
+      dir="ltr"
     >
       <motion.div
         className="flex whitespace-nowrap"
@@ -31,7 +31,7 @@ export default function MarqueeStrip({ inverted = false }) {
         {DOUBLED.map((item, i) => (
           <span
             key={i}
-            className={`inline-flex items-center gap-0 font-sans text-xs tracking-[0.18em] uppercase shrink-0 ${
+            className={`inline-flex items-center gap-0 font-sans text-xs tracking-[0.12em] uppercase shrink-0 ${
               inverted ? 'text-cream/60' : 'text-olive/50'
             }`}
           >

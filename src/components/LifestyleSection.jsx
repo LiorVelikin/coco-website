@@ -5,16 +5,15 @@ import { ASSETS } from '../assets';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-// 6 lifestyle images — two editorial rows
 const ROW1 = [
-  { src: ASSETS.poolModel,   alt: 'Woman poolside with COCO',           label: 'Poolside reset',          span: 5, aspect: '3/4'  },
-  { src: ASSETS.beachChair,  alt: 'Woman at beach club golden hour',    label: 'Golden hour hydration',   span: 4, aspect: '3/4'  },
-  { src: ASSETS.tennisWoman, alt: 'Woman on clay court with COCO',      label: 'Court cool',              span: 3, aspect: '3/4'  },
+  { src: ASSETS.poolModel,   alt: 'אישה ליד הבריכה עם COCO',        label: 'איפוס בבריכה',        span: 5, aspect: '3/4' },
+  { src: ASSETS.beachChair,  alt: 'אישה בביץ׳ קלאב בשקיעה',         label: 'הידרציה בשקיעה',      span: 4, aspect: '3/4' },
+  { src: ASSETS.tennisWoman, alt: 'אישה במגרש חימר עם COCO',         label: 'רענן במגרש',          span: 3, aspect: '3/4' },
 ];
 const ROW2 = [
-  { src: ASSETS.beachModel,   alt: 'Man at beach volleyball with COCO', label: 'Beach club cold',         span: 4, aspect: '4/3'  },
-  { src: ASSETS.telAvivBeach, alt: 'Woman at Tel Aviv beach with COCO', label: 'The promenade',           span: 4, aspect: '4/3'  },
-  { src: ASSETS.iceBucket,    alt: 'COCO cans in ice bucket',           label: 'Serve over ice',          span: 4, aspect: '4/3'  },
+  { src: ASSETS.beachModel,   alt: 'גבר בחוף עם COCO',              label: 'קר בביץ׳ קלאב',       span: 4, aspect: '4/3' },
+  { src: ASSETS.telAvivBeach, alt: 'אישה בטיילת תל אביב עם COCO',   label: 'הטיילת',              span: 4, aspect: '4/3' },
+  { src: ASSETS.iceBucket,    alt: 'פחיות COCO בדלי קרח',            label: 'הגישו על קרח',        span: 4, aspect: '4/3' },
 ];
 
 function LifestyleCard({ src, alt, label, delay, className = '', style = {} }) {
@@ -34,11 +33,9 @@ function LifestyleCard({ src, alt, label, delay, className = '', style = {} }) {
         className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
         loading="lazy"
       />
-      {/* Gradient always on — subtle at rest, stronger on hover */}
       <div className="absolute inset-0 bg-gradient-to-t from-olive/40 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Label chip */}
-      <div className="absolute bottom-4 left-4">
+      <div className="absolute bottom-4 right-4">
         <motion.span
           className="inline-flex items-center px-3.5 py-1.5 rounded-full bg-cream-50/85 backdrop-blur-sm text-olive text-[11px] font-sans font-medium tracking-wide border border-sage/18 shadow-sm"
           initial={{ opacity: 0, y: 8 }}
@@ -62,62 +59,42 @@ export default function LifestyleSection() {
     <section id="lifestyle" ref={ref} className="py-24 md:py-36 bg-cream overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
 
-        {/* Section label */}
         <motion.p
           className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-5"
-          initial={{ opacity: 0, x: -18 }}
+          initial={{ opacity: 0, x: 18 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: EASE }}
         >
-          Brand World
+          עולם המותג
         </motion.p>
 
-        {/* Headline with parallax */}
         <motion.div style={{ y: headlineY }} className="mb-14 md:mb-16 max-w-3xl">
           <BlurText
             as="h2"
-            text="Made for the moments you want to feel fresh again."
-            className="font-serif font-light text-olive leading-[1.05] text-balance"
+            text="נולד לרגעים שבהם תרצו להרגיש רענן שוב."
+            className="font-serif font-light text-olive leading-[1.15] text-balance"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
             delay={0.1}
             stagger={0.055}
           />
         </motion.div>
 
-        {/* ── Desktop 2-row editorial grid ── */}
+        {/* Desktop 2-row editorial grid */}
         <div className="hidden md:flex flex-col gap-4">
-
-          {/* Row 1: 5 + 4 + 3 cols (tall) */}
           <div className="grid gap-4" style={{ gridTemplateColumns: '5fr 4fr 3fr', height: '440px' }}>
             {ROW1.map((card, i) => (
-              <LifestyleCard
-                key={i}
-                src={card.src}
-                alt={card.alt}
-                label={card.label}
-                delay={i * 0.08}
-                className="h-full"
-              />
+              <LifestyleCard key={i} src={card.src} alt={card.alt} label={card.label} delay={i * 0.08} className="h-full" />
             ))}
           </div>
-
-          {/* Row 2: 4 + 4 + 4 cols (landscape) */}
           <div className="grid grid-cols-3 gap-4" style={{ height: '300px' }}>
             {ROW2.map((card, i) => (
-              <LifestyleCard
-                key={i}
-                src={card.src}
-                alt={card.alt}
-                label={card.label}
-                delay={i * 0.08}
-                className="h-full"
-              />
+              <LifestyleCard key={i} src={card.src} alt={card.alt} label={card.label} delay={i * 0.08} className="h-full" />
             ))}
           </div>
         </div>
 
-        {/* ── Mobile: vertical stack ── */}
+        {/* Mobile: vertical stack */}
         <div className="md:hidden flex flex-col gap-4">
           {[...ROW1, ...ROW2].map((card, i) => (
             <LifestyleCard
@@ -143,7 +120,7 @@ export default function LifestyleSection() {
             className="font-serif italic font-light text-olive/45 mx-auto"
             style={{ fontSize: 'clamp(1.2rem, 2.5vw, 2.2rem)', maxWidth: '600px' }}
           >
-            "Cold, clean, and exactly where summer takes you."
+            ״קר, נקי, ובדיוק איפה שהקיץ לוקח אותך.״
           </p>
         </motion.div>
       </div>

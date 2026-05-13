@@ -2,7 +2,12 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const EASE = [0.16, 1, 0.3, 1];
-const NAV_LINKS = ['Taste', 'Hydration', 'Lifestyle', 'Order'];
+const NAV_LINKS = [
+  { label: 'טעם',       href: 'taste'      },
+  { label: 'הידרציה',  href: 'hydration'  },
+  { label: 'סגנון חיים', href: 'lifestyle' },
+  { label: 'הזמנה',    href: 'order'      },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,7 +35,7 @@ export default function Navbar() {
           className="font-serif text-2xl md:text-3xl font-light tracking-[0.15em] text-olive uppercase"
           whileHover={{ letterSpacing: '0.22em' }}
           transition={{ duration: 0.4, ease: EASE }}
-          aria-label="COCO home"
+          aria-label="COCO בית"
         >
           COCO
         </motion.a>
@@ -39,17 +44,17 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link, i) => (
             <motion.li
-              key={link}
+              key={link.href}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + i * 0.06, duration: 0.6, ease: EASE }}
             >
               <a
-                href={`#${link.toLowerCase()}`}
+                href={`#${link.href}`}
                 className="font-sans text-sm font-medium text-olive/70 hover:text-olive tracking-wide transition-colors duration-300 relative group"
               >
-                {link}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-sage group-hover:w-full transition-all duration-400 ease-premium" />
+                {link.label}
+                <span className="absolute -bottom-0.5 right-0 w-0 h-px bg-sage group-hover:w-full transition-all duration-400 ease-premium" />
               </a>
             </motion.li>
           ))}
@@ -66,14 +71,14 @@ export default function Navbar() {
             href="#order"
             className="hidden md:flex items-center px-5 py-2 rounded-full bg-olive text-cream text-sm font-medium font-sans tracking-wide hover:bg-olive-dark transition-colors duration-300"
           >
-            Try COCO
+            נסו COCO
           </a>
 
           {/* Mobile menu toggle */}
           <button
             className="md:hidden flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            aria-label="פתח תפריט"
           >
             <motion.span
               className="block w-5 h-px bg-olive"
@@ -104,12 +109,12 @@ export default function Navbar() {
         <div className="glass-nav px-6 pb-6 flex flex-col gap-4">
           {NAV_LINKS.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={link.href}
+              href={`#${link.href}`}
               className="font-sans text-lg text-olive tracking-wide border-b border-sage/15 pb-3"
               onClick={() => setMenuOpen(false)}
             >
-              {link}
+              {link.label}
             </a>
           ))}
           <a
@@ -117,7 +122,7 @@ export default function Navbar() {
             className="mt-2 text-center px-5 py-3 rounded-full bg-olive text-cream text-sm font-medium"
             onClick={() => setMenuOpen(false)}
           >
-            Try COCO
+            נסו COCO
           </a>
         </div>
       </motion.div>

@@ -24,8 +24,8 @@ export default {
         warm: '#1C1C1A',
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Frank Ruhl Libre"', 'Georgia', 'serif'],
+        sans: ['"Heebo"', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         editorial: '0.08em',
