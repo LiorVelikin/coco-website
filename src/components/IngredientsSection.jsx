@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1];
 const INGREDIENT_CARDS = [
   { label: 'מי קוקוס',             sub: 'טהור, לא מסונן',      x: '-3%', y: '10%'  },
   { label: 'אלקטרוליטים טבעיים',   sub: 'אשלגן ומגנזיום',     x: '60%', y: '5%'   },
-  { label: 'ללא סוכר מוסף',        sub: 'ללא ממתיקים',         x: '-5%', y: '62%'  },
+  { label: 'ללא תוספת סוכר',        sub: 'בלי ממתיקים',         x: '-5%', y: '62%'  },
   { label: 'רעננות קפואה',         sub: 'הגישו ב-4°C',         x: '62%', y: '68%'  },
 ];
 
@@ -97,7 +97,7 @@ export default function IngredientsSection() {
         {/* Section label + headline */}
         <div className="mb-16 md:mb-20">
           <motion.p
-            className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-5"
+            className="font-sans text-xs text-sage uppercase mb-5"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -142,8 +142,7 @@ export default function IngredientsSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.9, ease: EASE }}
             >
-              COCO שומר על פשטות: מי קוקוס אמיתיים, טעם טבעי קליל וסיום מרענן
-              שמתאים ליומיום שלכם ללא כובד.
+              COCO שומר פשוט: מי קוקוס אמיתיים, טעם טבעי וסיום מרענן שמתאים לכל יום.
             </motion.p>
           </div>
         </div>
@@ -173,8 +172,8 @@ export default function IngredientsSection() {
                 >
                   <p className="font-serif font-light text-olive mb-1"
                     style={{ fontSize: 'clamp(1.8rem, 3vw, 2.8rem)' }}>{stat.val}</p>
-                  <p className="font-sans text-olive/65 text-xs font-medium tracking-wide uppercase mb-0.5">{stat.label}</p>
-                  <p className="font-sans text-olive/35 text-[10px] tracking-wide">{stat.sub}</p>
+                  <p className="font-sans text-olive/65 text-xs font-medium uppercase mb-0.5">{stat.label}</p>
+                  <p className="font-sans text-olive/35 text-[10px]">{stat.sub}</p>
                 </motion.div>
               ))}
             </div>
@@ -183,7 +182,7 @@ export default function IngredientsSection() {
               {[
                 { name: 'מי קוקוס',             note: 'טבעי ולא מסונן' },
                 { name: 'אלקטרוליטים טבעיים',   note: 'אשלגן, מגנזיום, נתרן' },
-                { name: 'ללא סוכר מוסף',        note: 'ללא ממתיקים או ריכוזים' },
+                { name: 'ללא תוספת סוכר',        note: 'בלי ממתיקים או ריכוזים' },
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -194,7 +193,7 @@ export default function IngredientsSection() {
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.7, ease: EASE }}
                 >
                   <span className="font-serif text-olive text-base">{item.name}</span>
-                  <span className="font-sans text-olive/40 text-[11px] tracking-wide">{item.note}</span>
+                  <span className="font-sans text-olive/40 text-[11px]">{item.note}</span>
                 </motion.div>
               ))}
             </div>

@@ -29,7 +29,7 @@ export default function StorySection() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-14">
 
         <motion.p
-          className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-10 md:mb-20"
+          className="font-sans text-xs text-sage uppercase mb-10 md:mb-20"
           initial={{ opacity: 0, x: 16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -76,7 +76,7 @@ export default function StorySection() {
                 <p className="font-serif italic text-olive text-sm leading-relaxed">
                   ״הפסקנו לחפש את מי הקוקוס הנכונים והחלטנו להכין אותם בעצמנו.״
                 </p>
-                <p className="font-sans text-[10px] tracking-[0.14em] uppercase text-sage mt-3">
+                <p className="font-sans text-[10px] uppercase text-sage mt-3">
                   — המייסדים, 2021
                 </p>
               </div>
@@ -122,7 +122,7 @@ export default function StorySection() {
                   transition={{ delay: 0.32, duration: 0.9, ease: EASE }}
                 >
                   מצאנו חקלאים שקוצרים קוקוסים צעירים תוך 48 שעות מהקטיף.
-                  ללא טיפול בחום. ללא סוכר מוסף. ללא ריכוזים.
+                  ללא טיפול בחום. ללא תוספת סוכר. ללא ריכוזים.
                   רק הדבר האמיתי, אטום בקור בשיא הרעננות ונשלח ישירות אליכם.
                 </motion.p>
 
@@ -163,10 +163,10 @@ export default function StorySection() {
                       style={{ fontSize: 'clamp(1.3rem, 2.5vw, 2rem)' }}>
                       {stat.val}
                     </p>
-                    <p className="font-sans text-olive/70 text-xs font-medium tracking-wide mb-0.5">
+                    <p className="font-sans text-olive/70 text-xs font-medium mb-0.5">
                       {stat.label}
                     </p>
-                    <p className="font-sans text-olive/35 text-[10px] tracking-wide">
+                    <p className="font-sans text-olive/35 text-[10px]">
                       {stat.sub}
                     </p>
                   </motion.div>

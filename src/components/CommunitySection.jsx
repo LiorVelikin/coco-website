@@ -70,7 +70,7 @@ export default function CommunitySection() {
         <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
           <motion.div style={{ y: headY }}>
             <motion.p
-              className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-5"
+              className="font-sans text-xs text-sage uppercase mb-5"
               initial={{ opacity: 0, x: 16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -150,7 +150,7 @@ export default function CommunitySection() {
           viewport={{ once: true }}
           transition={{ delay: 0.1, duration: 0.7, ease: EASE }}
         >
-          <p className="font-sans text-cream/30 text-xs tracking-[0.16em] uppercase">
+          <p className="font-sans text-cream/30 text-xs uppercase">
             שתפו את הרגע שלכם · #cocowater · @drinkcoco
           </p>
           <a href="#order" className="font-sans text-cream/40 text-xs tracking-wide hover:text-cream/70 transition-colors duration-300">

@@ -37,13 +37,13 @@ export default function FloatingChip({ label, sub, delay = 0, align = 'left' }) 
             border-t-2 border-t-sage
             px-3.5 py-2.5
             shadow-sm shadow-olive/6
-            ${isLeft ? 'text-right' : 'text-left'}
+            text-right
           `}
           style={{ borderTopColor: '#7A8C6E', minWidth: '120px' }}
         >
           <p className="font-serif text-olive text-sm leading-tight mb-0.5">{label}</p>
           {sub && (
-            <p className="font-sans text-[9px] tracking-[0.16em] uppercase text-sage">{sub}</p>
+            <p className="font-sans text-[9px] uppercase text-sage">{sub}</p>
           )}
         </div>
 

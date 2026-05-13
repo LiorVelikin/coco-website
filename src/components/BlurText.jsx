@@ -23,7 +23,7 @@ export default function BlurText({
         <motion.span
           key={i}
           aria-hidden="true"
-          style={{ display: 'inline-block', marginRight: '0.28em' }}
+          style={{ display: 'inline-block', marginInlineEnd: '0.28em' }}
           initial={{ opacity: 0, filter: 'blur(12px)', y: 30 }}
           animate={
             inView

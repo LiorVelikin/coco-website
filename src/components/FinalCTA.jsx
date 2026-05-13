@@ -34,7 +34,7 @@ export default function FinalCTA() {
 
         {/* Top label */}
         <motion.p
-          className="font-sans text-xs tracking-[0.22em] text-cream/40 uppercase mb-8 text-center"
+          className="font-sans text-xs text-cream/40 uppercase mb-8 text-center"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -98,8 +98,7 @@ export default function FinalCTA() {
             className="font-sans text-cream/50 font-light leading-relaxed mb-10 mx-auto"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)', maxWidth: '520px' }}
           >
-            COCO הם מי הקוקוס היומיומיים הנקיים שלכם — מהחוף למגרש
-            ולכל מקום שהקיץ לוקח אתכם.
+            COCO הם מי הקוקוס שלכם — מהחוף, למגרש, לכל מקום שהקיץ לוקח אתכם.
           </p>
 
           <motion.a
@@ -122,7 +121,7 @@ export default function FinalCTA() {
             viewport={{ once: true }}
             transition={{ delay: 0.9, duration: 0.8 }}
           >
-            מומלץ להגיש קר.
+            הכי טוב קר.
           </motion.p>
         </motion.div>
       </div>
@@ -134,7 +133,7 @@ export default function FinalCTA() {
 
       {/* Footer */}
       <div className="px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-cream/10">
-        <p className="font-serif text-xl tracking-[0.14em] text-cream/30 uppercase">COCO</p>
+        <p className="font-serif text-xl text-cream/30 uppercase tracking-widest">COCO</p>
         <p className="font-sans text-xs text-cream/25 tracking-wide">
           © 2025 COCO מי קוקוס פרמיום. כל הזכויות שמורות.
         </p>

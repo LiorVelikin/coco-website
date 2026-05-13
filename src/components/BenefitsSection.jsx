@@ -11,25 +11,25 @@ const BENEFITS = [
     number: 1,
     icon: 'leaf',
     title: '100% מי קוקוס',
-    body: 'מרענן, קל וחלק — ללא תוספות מיותרות.',
+    body: 'קל, נקי ומרענן בטבעיות. בלי שום דבר מיותר.',
   },
   {
     number: 2,
     icon: 'drop',
-    title: 'ללא סוכר מוסף',
-    body: 'רק הטעם הטרופי הנקי של מי קוקוס, מיועד לשתייה יומיומית.',
+    title: 'ללא תוספת סוכר',
+    body: 'הטעם הטרופי הנקי שמתאים לכל יום, בלי פשרות.',
   },
   {
     number: 3,
     icon: 'bolt',
     title: 'אלקטרוליטים טבעיים',
-    body: 'בחירה חכמה יותר אחרי אימון, טניס, ימי חוף ואחרי צהריים ארוכים.',
+    body: 'הבחירה הטבעית אחרי אימון, טניס, ים וכל יום ארוך.',
   },
   {
     number: 4,
     icon: 'can',
     title: 'פחית פרמיום 355 מ״ל',
-    body: 'דקה, קרה, קלה לנשיאה ומעוצבת להיראות טוב בכל מקום.',
+    body: 'דקה, קרה, נוחה לנשיאה. נראית טוב בכל מקום.',
   },
 ];
 
@@ -57,7 +57,7 @@ export default function BenefitsSection() {
         {/* Headline */}
         <div className="pt-16 md:pt-32 pb-12 md:pb-20">
           <motion.p
-            className="font-sans text-xs tracking-[0.2em] text-sage uppercase mb-5"
+            className="font-sans text-xs text-sage uppercase mb-5"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function BenefitsSection() {
           </motion.p>
           <BlurText
             as="h2"
-            text="הידרציה שבאמת מרגישה נקייה."
+            text="שתייה שבאמת מרגישה נקייה."
             className="font-serif font-light text-olive leading-[1.05] max-w-2xl"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
             delay={0.1}
@@ -110,7 +110,7 @@ export default function BenefitsSection() {
               />
 
               <motion.p
-                className="mt-6 font-sans text-xs tracking-[0.16em] text-sage uppercase opacity-60"
+                className="mt-6 font-sans text-xs text-sage uppercase opacity-60"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 0.6 }}
                 viewport={{ once: true }}

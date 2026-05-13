@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 
 const ITEMS = [
   '100% מי קוקוס',
-  'ללא סוכר מוסף',
+  'ללא תוספת סוכר',
   'אלקטרוליטים טבעיים',
-  'הגישו קפוא',
+  'שתו קר',
   'פחית פרמיום 355 מ״ל',
-  'מאושר לביץ׳ קלאב',
-  'הידרציה לאחר משחק',
+  'מושלם לביץ׳ קלאב',
+  'אחרי כל אימון',
   'שתייה יומיומית נקייה',
 ];
 
@@ -31,7 +31,7 @@ export default function MarqueeStrip({ inverted = false }) {
         {DOUBLED.map((item, i) => (
           <span
             key={i}
-            className={`inline-flex items-center gap-0 font-sans text-xs tracking-[0.12em] uppercase shrink-0 ${
+            className={`inline-flex items-center gap-0 font-sans text-xs uppercase shrink-0 ${
               inverted ? 'text-cream/60' : 'text-olive/50'
             }`}
           >

@@ -60,7 +60,7 @@ export default function LifestyleSection() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12">
 
         <motion.p
-          className="font-sans text-xs tracking-[0.22em] text-sage uppercase mb-5"
+          className="font-sans text-xs text-sage uppercase mb-5"
           initial={{ opacity: 0, x: 18 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -72,7 +72,7 @@ export default function LifestyleSection() {
         <motion.div style={{ y: headlineY }} className="mb-14 md:mb-16 max-w-3xl">
           <BlurText
             as="h2"
-            text="נולד לרגעים שבהם תרצו להרגיש רענן שוב."
+            text="בשביל הרגעים שתרצו להרגיש רענן."
             className="font-serif font-light text-olive leading-[1.15] text-balance"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 5rem)' }}
             delay={0.1}
